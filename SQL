@@ -1,0 +1,35 @@
+1
+
+Дано таблиці department і employee.
+Знайдіть назву відділів та загальну суму коштів, яка витрачається на зарплату працівників. Відобразіть тількі ті відділи, у яких більше трьох працівників. Відсортуйте результат за сумою грошей у спадаючому порядку.
+Результат повинен містити наступні колонки:
+•	назву відділу: department_name
+•	загальну суму грошей: amount_of_money
+____________department__________
+| id |    name      |  budget   |
+| 1  | Marketing    | 200000    |
+.................................
+| 8  | Recruiting   | 750000    |
+
+__________________________________employee______________________________
+| id | first_name  | last_name   | department_id | hiring_date | salary |
+| 1  | Steven      | King        | 1             | 2019-12-02  | 15000  |
+.........................................................................
+| 22 | Adam        | Fripp       | 8             | 2021-03-17  | 12000  |
+•	
+•	SELECT name AS department_name, SUM (salary) AS amount_of_money
+•	FROM employee
+•	INNER JOIN department
+•	ON employee.department_id=department.id
+•	
+•	GROUP BY name
+•	HAVING COUNT (first_name) > 3
+•	ORDER BY amount_of_money DESC
+•	 ;
+
+
+DEPARTMENT_NAME	AMOUNT_OF_MONEY
+IT	67000
+Marketing	54500
+Finance	45850
+
