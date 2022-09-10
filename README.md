@@ -1,2 +1,2 @@
 # repoz1
-tasks
+Hello! Here are my first tasks on SQL
